@@ -1,4 +1,4 @@
-(defproject net.ofnir/relative-clj-http "0.1.0-SNAPSHOT"
+(defproject net.ofnir/relative-clj-http "0.1.0"
   :description "Helpers to provide defaults and relative modifications around clj-http"
   :url "https://github.com/christoph-frick/relative-clj-http"
   :license {:name "MIT"
