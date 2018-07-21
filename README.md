@@ -4,6 +4,8 @@ Provide tools to keep a config map around a default
 [clj-http](https://github.com/dakrone/clj-http) request and do relative
 manipulation to it -- for now or maybe ever: client only.
 
+[![Clojars Project](https://img.shields.io/clojars/v/net.ofnir/relative-clj-http.svg)](https://clojars.org/net.ofnir/relative-clj-http)
+
 ## Usage
 
 Some examples:
