@@ -4,7 +4,7 @@
   :license {:name "MIT"
             :url "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.9.0"]
-                 [clj-http "3.8.0"]]
+                 [clj-http "3.9.0"]]
   :plugins [[lein-codox "0.10.3"]]
   :deploy-repositories [["releases" :clojars]]
   :codox {:output-path "docs"})
