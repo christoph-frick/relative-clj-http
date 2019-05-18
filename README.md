@@ -5,6 +5,7 @@ Provide tools to keep a config map around a default
 manipulation to it -- for now or maybe ever: client only.
 
 [![Clojars Project](https://img.shields.io/clojars/v/net.ofnir/relative-clj-http.svg)](https://clojars.org/net.ofnir/relative-clj-http)
+[![cljdoc badge](https://cljdoc.org/badge/net.ofnir/relative-clj-http)](https://cljdoc.org/d/net.ofnir/relative-clj-http/CURRENT)
 
 ## Usage
 
