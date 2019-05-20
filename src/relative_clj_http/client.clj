@@ -46,15 +46,6 @@
   [config]
   (get config :previous-url (:current-url config)))
 
-(defn- change-dir ; very naive
-  "Helper to create the next URL from the config and cd-ish instruction."
-  [config to]
-  {:pre [(string? to)]}
-  (normalize-url (cond
-                   (absolute-url? to) to
-                   (str/starts-with? to "~") (str (home config) "/" (subs to 1))
-                   :else (str (pwd config) "/" to))))
-
 (defn- remember-old-pwd
   "Helper to change the current url and remember the previous one"
   [config new-pwd]
@@ -87,7 +78,9 @@
      :else
      (remember-old-pwd
       config
-      (change-dir config path))))
+      (normalize-url (cond
+                       (str/starts-with? path "~") (str (home config) "/" (subs path 1))
+                       :else (str (pwd config) "/" path))))))
   ([config old new]
    (remember-old-pwd config (str/replace (pwd config) old new))))
 
