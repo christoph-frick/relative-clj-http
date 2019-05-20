@@ -15,17 +15,27 @@ Some examples:
 ; require
 user=> (require '[relative-clj-http.client :as c])
 nil
+
 ; a default config for convenience
 user=> c/default-config
 {:base-url "http://localhost:8080"
  :request {:as :auto :coerce :always :debug false :throw-exceptions false}}
-; relative "change directory"
-user=> (c/cd c/default-config "/api/1.0")
-{:base-url "http://localhost:8080"
- :current-url "http://localhost:8080/api/1.0"
- :previous-url "http://localhost:8080"
+
+; create a config and adjust the base
+user=> (def config (-> c/default-config (c/cd "http://httpbin.org")))
+#'user/config
+user=> config
+{:base-url "http://httpbin.org"
+ :current-url "http://httpbin.org"
+ :previous-url "http://httpbin.org"
  :request {:as :auto :coerce :always :debug false :throw-exceptions false}}
 
+; relative request with that config
+user=> (c/request config :get "/get")
+{:body "{\n  \"args\": {}, \n  \"headers\": {\n    \"Accept-Encoding\": \"gzip, deflate\", ..."
+ :content-type :application/json
+ :status 200
+ ; ...
 ```
 
 ## License
