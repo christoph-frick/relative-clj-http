@@ -57,8 +57,10 @@
 (defn cd
   "Change directory in the config.
 
-   - with no param given, jump back to what is considered home
+   - with no param given, jump back to the current base
    - given a path, change relative or absolute URL
+     - a single `-` will change back to the previous URL
+     - a leading `~` changes relative to the current base
    - with two params replace any occurence of the first argument in the pwd with the second"
   ([config]
    (cd config (home config)))
