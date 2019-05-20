@@ -77,3 +77,11 @@
         back (cd cd-ed "-")]
     (is (= (pwd cd-ed) (old-pwd back)))
     (is (= (pwd back) (old-pwd cd-ed)))))
+
+(deftest request-tests
+  (let [simple-config (cd {} "http://localhost:8080")]
+    (with-redefs [clj-http.client/request identity]
+      (is (= {:method :get, :url "http://localhost:8080"}
+             (request simple-config :get)))
+      (is (= {:method :get, :url "http://localhost:8080/test"}
+             (request simple-config :get "/test"))))))
