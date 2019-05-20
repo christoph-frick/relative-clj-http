@@ -28,8 +28,6 @@ user=> (c/cd c/default-config "/api/1.0")
 
 ```
 
-See the [API docs](https://christoph-frick.github.io/relative-clj-http/).
-
 ## License
 
 Copyright © 2018 Christoph Frick
