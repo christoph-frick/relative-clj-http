@@ -40,6 +40,6 @@ user=> (c/request config :get "/get")
 
 ## License
 
-Copyright © 2018 Christoph Frick
+Copyright © 2019 Christoph Frick
 
 Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
